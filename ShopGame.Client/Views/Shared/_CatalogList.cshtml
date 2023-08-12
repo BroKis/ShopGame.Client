@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Localization
+@using ShopGame.Identity.Models
+@inject IViewLocalizer Localizer
+@model IEnumerable<ShopGame.Client.Models.Outcoming.GameForDisplay>
+
+<style>
+    
+</style>
+@if (Model.Any())
+{
+   
+        <div class="container">
+            @foreach (var item in Model)
+            {
+                <div class="card flex-row flex-wrap">
+                <div class="card-header border-0">
+                    <img src="@item.ImageUrl" height="200" width="200" alt="">
+                </div>
+                <div class="card-block px-2">
+                    <h4 class="card-title">@Localizer[@item.Title]</h4>
+                    <p class="card-text">@Localizer[@item.ShortDescription]</p>
+                    <p class="card-text">
+
+                        @if (item.InStock)
+                        {
+                            <p>@Localizer["Yes"]</p>
+                        }
+                        else
+                        {
+                            <p>@Localizer["No"]</p>
+                        }
+                    </p>
+                    <p class="card-text">
+                        @if (item.InStock)
+                        {
+                            <p>@Localizer["Price"]@Math.Round(item.Cost, 2) BYN.</p>
+                        }
+                    </p>
+                    <a class="btn btn-outline-primary float-right" asp-controller="Catalog" asp-action="GameDetail" asp-route-id="@item.Id">
+                        <i class="bi bi-eye-fill"></i> @Localizer["DetailName"].
+                    </a>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole(AvailableRoles.Client) && item.InStock)
+                    {
+                        <a class="btn btn-outline-primary float-right" asp-controller="Order" asp-action="Create" asp-route-id="@item.Id">
+                            <i class="bi bi-eye-fill"></i> @Localizer["BName"]
+                        </a>
+                    }
+
+                </div>
+                <div class="w-100"></div>
+                <div class="card-footer w-100 text-muted">
+                    @if (User.Identity.IsAuthenticated && User.IsInRole(AvailableRoles.Worker))
+                    {
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">@Localizer["Expand"]</button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">
+                                    <a asp-controller="Catalog" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">@Localizer["Del"]</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a asp-controller="Catalog" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary" method="post">@Localizer["Upd"]</a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    
+}
+else
+{
+    <p class="text-muted text-center my-5">@Localizer["NoGame"]</p>
+}

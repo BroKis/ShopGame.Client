@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShopGame.Identity.Models
+@model ShopGame.Client.Models.IdentityModels.UserForSignUp
+@inject UserManager<ApplicationUser> UserManager;
+@inject IViewLocalizer Localizer 
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-black">
+
+                <div class="px-5 ms-xl-4">
+                    <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+                </div>
+
+                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+                    <form method="post" asp-controller="Account" asp-action="RegistrationForm" class="form-register">
+
+                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">@Localizer["Title"]</h3>
+
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label><br/>
+                            <input asp-for="Email" class="form-control"/>
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Name"></label><br/>
+                            <input asp-for="Name" class="form-control"/>
+                            <span asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber"></label><br/>
+                            <input asp-for="PhoneNumber" class="form-control"/>
+                            <span asp-validation-for="PhoneNumber"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label><br/>
+                            <input asp-for="Password" class="form-control"/>
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PasswordConfirm"></label><br/>
+                            <input asp-for="PasswordConfirm" class="form-control"/>
+                            <span asp-validation-for="PasswordConfirm"></span>
+                        </div>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="form-group">
+                                <label asp-for="Role"></label><br/>
+                                <select asp-for="Role" class="form-control">
+                                    <option value="Worker">@Localizer["WorkerRole"]</option>
+                                    <option value="Client">@Localizer["ClientRole"]</option>
+                                    <option value="Admin">@Localizer["AdmRole"]</option>
+                                </select>
+                                <span asp-validation-for="PasswordConfirm"></span>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block mt-3">@Localizer["Button"]</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="https://p-v.by/wp-content/uploads/2023/02/1619104685_3-phonoteka_org-p-fon-s-raznimi-igrami-3.jpg"
+                     alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+            </div>
+        </div>
+    </div>
+</section>

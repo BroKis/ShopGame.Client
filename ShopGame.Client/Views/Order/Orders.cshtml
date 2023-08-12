@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ShopGame.Client.Models.Outcoming.OrderForDisplay>
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+@if (Model.Any())
+{
+    <h1 class="text-center">@Localizer["Title"]</h1>
+    <div class="col-md-8 offset-md-2">
+
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>@Localizer["Pict"]</th>
+                <th>@Localizer["Namen"]</th>
+                <th>@Localizer["Genre"]</th>
+                <th>@Localizer["Cost"]</th>
+                <th>@Localizer["Order"]</th>
+                <th>@Localizer["Act"]</th>
+            </tr>
+            </thead>
+            @foreach (var item in @Model)
+            {
+                <tbody>
+                <tr>
+                    <td class="align-middle">
+                        <img class="rounded-circle" src="@item.Game.ImageUrl" alt="@item.Game.Title" style="max-width: 100px; object-fit: cover; width: 100px; height: 100px;"/>
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Game.Title)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Game.Genre)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Game.Cost)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.OrderTime)
+                    </td>
+                    <td class="alin-middle">
+                        <a class="btn btn-outline-primary" asp-action="GameDetail" asp-controller="Catalog"
+                           asp-route-id="@item.GameID">
+                            <i class="bi bi-pencil-square"></i>| @Localizer["Detail"] |
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+}
+else
+{
+    <p class="text-muted text-center my-5">@Localizer["Footer"]</p>
+}

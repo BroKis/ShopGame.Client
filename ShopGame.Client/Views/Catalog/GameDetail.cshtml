@@ -1,0 +1,31 @@
+﻿@model ShopGame.Client.Models.Outcoming.GameForDisplay
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/audio-touch/audio-touch.css"/>
+<script type="text/javascript" src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="@Model.ImageUrl" width="500" height="300"/>
+            </div>
+            <div class="col">
+                <div class="row" style="display: flex">
+                    <h5>@Localizer["Title"]:</h5>
+                    <p>@Model.Title</p>
+                </div>
+                <div class="row" style="display: flex">
+                    <h5>@Localizer["Genre"]</h5>
+                    <p>@Localizer[@Model.Genre];</p>
+                </div>
+                <div class="row">
+                    <h5>@Localizer["Desc"]:</h5>
+                    <p>@Localizer[@Model.Description]/p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

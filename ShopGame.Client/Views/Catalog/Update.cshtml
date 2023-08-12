@@ -1,0 +1,106 @@
+﻿@model ShopGame.Client.Models.Incoming.GameForUpdate
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Title"] + " " + @Model.Title;
+}
+
+<style>
+    .field-validation-error {
+        color: #b94a48;
+    }
+      
+    .field-validation-valid {
+        display: none;
+    }
+      
+    input.input-validation-error {
+        border: 1px solid #b94a48;
+    }
+      
+    input[type="checkbox"].input-validation-error {
+        border: 0 none;
+    }
+      
+    .validation-summary-errors {
+        color: #b94a48;
+    }
+      
+    .validation-summary-valid {
+        display: none;
+    }
+</style>
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-black">
+
+                <div class="px-5 ms-xl-4">
+                    <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+                </div>
+
+                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+                    <form form asp-action="Update" asp-controller="Catalog" method="post" class="form-register">
+                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">@Localizer["Header"]</h3>
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group mb-3 text-center">
+                            <img id="ProfilePicturePreview" class="border-info" style="max-width: 350px"/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title"></label><br/>
+                            <input asp-for="Title" class="form-control"/>
+                            <span asp-validation-for="Title"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ShortDescription"></label><br/>
+                            <textarea asp-for="ShortDescription" class="form-control"></textarea>
+                            <span asp-validation-for="ShortDescription"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description"></label><br/>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ImageUrl"></label><br/>
+                            <input id="ProfilePictureURL" asp-for="ImageUrl" class="form-control">
+                            <span asp-validation-for="ImageUrl"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Cost"></label><br/>
+                            <input asp-for="Cost" class="form-control"/>
+                            <span asp-validation-for="Cost"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="InStock"></label><br/>
+                            <input asp-for="InStock" type="radio" value="true"/>
+                            <span>Да</span> <br/>
+                            <input asp-for="InStock" type="radio" value="false"/>
+                            <span>Нет</span> <br/>
+                            <span asp-validation-for="InStock"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="GenreId"></label><br/>
+                            <select asp-items="@(new SelectList(ViewBag.Genres, "Id", "Title"))" asp-for="GenreId" class="form-control"></select>
+                            <span asp-validation-for="GenreId"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="padding: 10px">@Localizer["Button"]</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#ProfilePictureURL").val();
+        })
+        $("#ProfilePictureURL").on("change", function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $(this).val();
+        })
+    </script>
+}

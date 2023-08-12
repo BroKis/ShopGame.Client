@@ -1,0 +1,83 @@
+﻿@model ShopGame.Client.Models.Incoming.OrderForCreate
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+<link rel="stylesheet" type="text/css" href="css/card.css">
+<div class="col-md-8 offset-md-2">
+    <form form asp-controller="Order" asp-action="Create" method="post">
+        <div class="container p-0">
+            <div class="card px-4">
+                <p class="h8 py-3">@Localizer["Title"]</p>
+                <div class="row gx-3">
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">@Localizer["Name"]</p>
+                            <input class="form-control mb-3" name="name" type="text" placeholder="Name" value="Barry Allen">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">@Localizer["Name"]</p>
+                            <input class="form-control mb-3" name="number" type="text" placeholder="1234 5678 435678">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">@Localizer["Date"]</p>
+                            <input class="form-control mb-3" name="expiry" type="text" placeholder="MM/YYYY">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">CVV/CVC</p>
+                            <input class="form-control mb-3 pt-2 " name="cvv" type="password" placeholder="***">
+                        </div>
+                    </div>
+                    <div class="col-12">
+
+                        <button type="submit" class="btn btn-primary mb-3">@Localizer["Pay"] @Math.Round(@Model.Cost, 2) BYN</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <h1 class="text-center">@Localizer["Title"]</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>@Localizer["Pic"]</th>
+            <th>@Localizer["Titl"]</th>
+            <th>@Localizer["Genre"]</th>
+            <th>@Localizer["Cost"]</th>
+            <th>@Localizer["Date"]</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="align-middle">
+                <img class="rounded-circle" src="@Model.ImageUrl" alt="@Model.Title" style="max-width: 100px; object-fit: cover; width: 100px; height: 100px;"/>
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => Model.Title)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => Model.Genre)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => Model.Cost,2)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => Model.OrderTime)
+            </td>
+            <td class="alin-middle">
+                <a class="btn btn-outline-primary" asp-action="GameDetail" asp-controller="Catalog"
+                   asp-route-id="@Model.GameID">
+                    <i class="bi bi-pencil-square"></i>| @Localizer["Detail"] |
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

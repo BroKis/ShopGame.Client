@@ -1,0 +1,41 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FModels_002FIdentityModels_002FUserForSignIn/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FModels_002FIdentityModels_002FUserForSignUp/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FModels_002FIdentityModels_002FUserForUpdate/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FModels_002FIncoming_002FGameForCreate/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FModels_002FIncoming_002FGameForUpdate/@EntryIndexedValue">False</s:Boolean>
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FAccount_002FAccounts/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FAccount_002FLoginForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FAccount_002FRegistrationForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FAccount_002FUpdate/@EntryIndexedValue">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FCatalog_002FCreate/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FCatalog_002FGameDetail/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FCatalog_002FIndex/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FCatalog_002FUpdate/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FHome_002FIndex/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FHome_002FPrivacy/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FOrder_002FCreate/@EntryIndexedValue">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FOrder_002FOrders/@EntryIndexedValue">False</s:Boolean>
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002FBadRequest/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002FError/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002FNotFound/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002FSuccess/@EntryIndexedValue">False</s:Boolean>
+	
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002F_005FCatalogList/@EntryIndexedValue">False</s:Boolean>
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002F_005FLayout/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=ShopGame_002EClient_002FResources_002FViews_002FShared_002F_005FSelectLanguagePartial/@EntryIndexedValue">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyStringResources/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

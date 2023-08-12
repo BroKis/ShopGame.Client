@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = @Localizer["Title"];
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="css/style.css">
+
+<div class="container">
+    <div class="mt-2">
+        <h3>@Localizer["GameTitle"]</h3>
+        <p>@Localizer["GameRule"]</p>
+    </div>
+
+
+    <canvas id="game" width="608" height="608"></canvas>
+    <script src="js/game.js"></script>
+</div>

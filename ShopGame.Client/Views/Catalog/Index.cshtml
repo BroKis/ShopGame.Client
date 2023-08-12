@@ -1,0 +1,74 @@
+﻿@using ShopGame.Client.CustomHtmlHelpers
+@using ShopGame.Identity.Models
+@model IEnumerable<ShopGame.Client.Models.Outcoming.GameForDisplay>
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+
+<form id="search-form" asp-action="Search" asp-controller="Catalog"
+      data-ajax="true"
+      data-ajax-update="#com"
+      data-ajax-mode="replace"
+      data-ajax-method="post">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" name="gameName" class="form-control" placeholder="Название">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">
+                    @Localizer["SearchButton"]
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-6" id="games-list">
+        @await Html.PartialAsync("_CatalogList", Model)
+    </div>
+</div>
+<div class="text-center mt-3 d-none" id="show-all-button">
+    <button class="btn btn-outline-secondary btn-sm">
+        @Localizer["ShowButton"]
+    </button>
+</div>
+
+@if (User.Identity.IsAuthenticated && User.IsInRole(AvailableRoles.Worker))
+{
+    @Html.CreateEntityButton("Catalog")
+}
+@section Scripts
+{
+      <script>
+                $(function () {
+                    $('#search-form').submit(function (event) {
+                        event.preventDefault();
+        
+                        let gameName = $('input[name="gameName"]').val();
+        
+                        $.ajax({
+                            url: '@Url.Action("Search", "Catalog")',
+                            type: 'GET',
+                            data: { gameName: gameName },
+                            success: function (result) {
+                                $('#games-list').html(result);
+                                $('#show-all-button').removeClass('d-none');
+                            }
+                        });
+                    });
+        
+                    $('#show-all-button').click(function () {
+                        $.ajax({
+                            url: '@Url.Action("ShowAllWithPartialView", "Catalog")',
+                            type: 'GET',
+                            success: function (result) {
+                                $('#games-list').html(result);
+                                $('#show-all-button').addClass('d-none');
+                            }
+                        });
+                    });
+                });
+            </script>
+}

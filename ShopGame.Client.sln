@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopGame.Client", "ShopGame.Client\ShopGame.Client.csproj", "{1331AE17-8253-4FCC-8A13-B6E75F3A2530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopGame.Identity", "ShopGame.Identity\ShopGame.Identity.csproj", "{96135962-1E09-4A06-88F4-66F194205998}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1331AE17-8253-4FCC-8A13-B6E75F3A2530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1331AE17-8253-4FCC-8A13-B6E75F3A2530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1331AE17-8253-4FCC-8A13-B6E75F3A2530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1331AE17-8253-4FCC-8A13-B6E75F3A2530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96135962-1E09-4A06-88F4-66F194205998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96135962-1E09-4A06-88F4-66F194205998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96135962-1E09-4A06-88F4-66F194205998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96135962-1E09-4A06-88F4-66F194205998}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

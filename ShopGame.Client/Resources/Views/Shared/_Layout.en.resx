@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="LogoName" xml:space="preserve">
+        <value>Capibara</value>
+    </data>
+    <data name="Catalog" xml:space="preserve">
+        <value>Open Catalog</value>
+    </data>
+    <data name="PrivacyName" xml:space="preserve">
+        <value>Privacy</value>
+    </data>
+    <data name="AccountName" xml:space="preserve">
+        <value>Work with accounts</value>
+    </data>
+    <data name="AccountList" xml:space="preserve">
+        <value>Show accounts</value>
+    </data>
+    <data name="CreateName" xml:space="preserve">
+        <value>Create a new account</value>
+    </data>
+    <data name="AutorizationName" xml:space="preserve">
+        <value>Autorization</value>
+    </data>
+    <data name="UpdAccName" xml:space="preserve">
+        <value>Update account</value>
+    </data>
+    <data name="HistName" xml:space="preserve">
+        <value>Buying History</value>
+    </data>
+    <data name="ExtName" xml:space="preserve">
+        <value>Exit an account</value>
+    </data>
+</root>

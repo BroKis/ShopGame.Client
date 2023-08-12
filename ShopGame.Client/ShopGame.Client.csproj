@@ -1,0 +1,456 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+      <PackageReference Include="jQuery.Ajax.Unobtrusive" Version="2.0.20710" />
+      <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.8" />
+      <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+      <PackageReference Include="System.Globalization" Version="4.3.0" />
+      <PackageReference Include="System.Globalization.Extensions" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShopGame.Identity\ShopGame.Identity.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Views\Shared\_Layout.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_Layout.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Index.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Index.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Privacy.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Privacy.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Privacy.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Privacy.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_CatalogList.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_CatalogList.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_CatalogList.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>CatalogList.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\BadRequest.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>BadRequest.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\BadRequest.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>BadRequest.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\Error.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Error.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\Error.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Error.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\NotFound.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>NotFound.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\NotFound.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>NotFound.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\Success.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Success.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\Success.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Success.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\GameDetail.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GameDetail.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\GameDetail.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GameDetail.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\Create.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Creare.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\Create.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Create.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\Index.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\Index.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\Update.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Update.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Catalog\Update.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Update.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\Accounts.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Accounts.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\Accounts.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Accounts.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\LoginForm.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>LoginForm.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\LoginForm.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>LoginForm.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\RegistrationForm.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>RegistrationForm.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\RegistrationForm.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>RegistrationForm.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\Update.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Update.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Account\Update.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Update.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Order\Create.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Create.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Order\Create.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Create.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Order\Orders.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Order.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Order\Orders.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Order.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\IdentityModels\UserForSignIn.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserForSignIn.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\IdentityModels\UserForSignIn.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserForSignIn.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\IdentityModels\UserForSignUp.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserForSignUp.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\IdentityModels\UserForSignUp.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserForSignUp.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\IdentityModels\UserForUpdate.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UsersForUpdate.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\IdentityModels\UserForUpdate.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserForUpdate.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\Incoming\GameForCreate.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GameForCreate.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\Incoming\GameForCreate.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GameForCreate.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\Incoming\GameForUpdate.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GameForUpdate.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Models\Incoming\GameForUpdate.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GameForUpdate.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_SelectLanguagePartial.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_SelectLanguagePartial.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_SelectLanguagePartial.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_SelectLanguagePartial.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Views\Home\Index.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Home\Index.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Home\Privacy.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Privacy.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Home\Privacy.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Privacy.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_CatalogList.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_CatalogList.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_CatalogList.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_CatalogList.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\BadRequest.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>BadRequest.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\BadRequest.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>BadRequest.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\Error.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\Error.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Error.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\NotFound.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>NotFound.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\NotFound.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>NotFound.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\Success.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Success.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\Success.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Success.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\GameDetail.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GameDetail.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\GameDetail.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GameDetail.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\Create.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Create.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\Create.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Create.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\Index.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\Index.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\Update.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Update.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Catalog\Update.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Update.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\Accounts.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Accounts.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\Accounts.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Accounts.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\LoginForm.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>LoginForm.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\LoginForm.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>LoginForm.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\RegistrationForm.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>RegistrationForm.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\RegistrationForm.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>RegistrationForm.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\Update.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Update.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Account\Update.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Update.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Order\Create.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Create.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Order\Create.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Create.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Order\Orders.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Orders.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Order\Orders.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Orders.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\IdentityModels\UserForSignIn.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserForSignIn.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\IdentityModels\UserForSignIn.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserForSignIn.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\IdentityModels\UserForSignUp.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserForSignUp.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\IdentityModels\UserForSignUp.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserForSignUp.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\IdentityModels\UserForUpdate.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserForUpdate.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\IdentityModels\UserForUpdate.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserForUpdate.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\Incoming\GameForCreate.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GameForCreate.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\Incoming\GameForCreate.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GameForCreate.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\Incoming\GameForUpdate.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GameForUpdate.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Models\Incoming\GameForUpdate.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GameForUpdate.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_SelectLanguagePartial.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_SelectLanguagePartial.ru.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_SelectLanguagePartial.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_SelectLanguagePartial.en.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>
