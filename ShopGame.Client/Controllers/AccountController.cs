@@ -183,7 +183,6 @@ public class AccountController : Controller
     return View("BadRequest", "Home");
   }
 
-
   public IActionResult Accounts()
   {
     List<UserForUpdate> list = new List<UserForUpdate>();
